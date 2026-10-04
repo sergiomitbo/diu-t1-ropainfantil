@@ -34,4 +34,65 @@ Cada objetivo tiene un indicador y una meta. Tres se comprueban en las pruebas c
 
 Tras el lanzamiento, estos beneficios se seguirían con tres indicadores: tasa de conversión de la app, porcentaje de devoluciones con motivo «talla» y número de pedidos con recogida en tienda.
 
+## 2. Investigación y análisis de usuarios
+
+### 2.1 Datos demográficos y segmentación
+
+La investigación es básica y parte de tres fuentes: el encargo de la cadena (quién compra y en qué contexto), el análisis de tres apps de la competencia (apartado 2.3) y las dos personas construidas a partir de ambos (apartado 2.2). Divido a quien compra en tres segmentos según su relación con el niño, porque eso cambia cuánto sabe de tallas y con qué frecuencia compra.
+
+| Segmento | Edad aprox. | Frecuencia de compra | Contexto de uso | Lo que más necesita |
+|---|---|---|---|---|
+| Madres y padres | 28-45 | Alta: los niños cambian de talla varias veces al año, y a eso se suman las temporadas y la vuelta al cole. | Ratos sueltos y con interrupciones, a menudo con el niño en brazos o empujando la sillita. | Reponer rápido, tallas fiables y no perder la compra si les interrumpen. |
+| Abuelas y abuelos | 60-75 | Media-baja, concentrada en cumpleaños, Navidad y Reyes. | En casa y sin prisa, pero con poca confianza al pagar con el móvil y con la letra del sistema aumentada. | Entender la talla sin conocerla, textos legibles y un pago claro. |
+| Familiares y amigos que regalan | 25-55 | Puntual: nacimientos, bautizos y cumpleaños. | Compra rápida, muchas veces sin conocer bien al niño. | Ideas por edad, ticket regalo y cambio fácil. |
+
+Los tres segmentos comparten tres rasgos que condicionan todo el diseño. Compran desde el móvil, y la app sale solo para Android. Lo usan a menudo con una sola mano: casi la mitad de la gente sujeta el móvil así (Hoober, 2013), y este público suele tener además la otra mano ocupada con el niño. Y ninguno es experto en tallas infantiles, que dependen más de la altura del niño que de su edad. Además, la cadena tiene tiendas físicas, así que la recogida y el cambio en tienda son una ventaja que una tienda solo online no puede ofrecer.
+
+### 2.2 Personas
+
+#### Persona 1: Laura Sánchez, la madre que repone sobre la marcha
+
+| Campo | Detalle |
+|---|---|
+| **Edad y ocupación** | 34 años. Enfermera con turnos rotativos en un hospital de Getafe. |
+| **Familia** | Dos hijos: Leo, de 4 años y 108 cm, y Martina, de 9 meses. |
+| **Dispositivo y contexto** | Android de gama media. Compra en el autobús o mientras da el biberón, con una mano libre, y la interrumpen constantemente. |
+| **Objetivos** | Reponer pijamas, bodies y zapatillas en pocos minutos; acertar la talla de Leo, que está dando el estirón; recoger el pedido en la tienda de su barrio al salir del turno. |
+| **Frustraciones** | Formularios largos en el móvil, botones pequeños que toca sin querer, perder el carrito cuando tiene que dejar el móvil y que cada marca talle distinto, lo que la obliga a devolver. |
+| **Frase** | «Si no lo compro en dos minutos, ya no lo compro.» |
+
+#### Persona 2: Antonio Ruiz, el abuelo que quiere acertar con el regalo
+
+| Campo | Detalle |
+|---|---|
+| **Edad y ocupación** | 68 años. Jubilado; trabajó como administrativo en una gestoría de Zaragoza. |
+| **Familia** | Su nieta Lucía vive en Sevilla y cumple 6 años el mes que viene. La ve pocas veces al año. |
+| **Dispositivo y contexto** | Android con el tamaño de letra aumentado. Compra desde el sofá y sin prisa, pero desconfía de pagar con el móvil. |
+| **Objetivos** | Regalarle a Lucía un vestido que le quede bien sin preguntar a su hija, para que sea sorpresa; enviarlo directamente a Sevilla con ticket regalo; saber que se puede cambiar. |
+| **Frustraciones** | Letra pequeña e iconos sin texto; no entender qué significa «116» o «6A»; mensajes de error que no explican qué ha hecho mal; apps que le obligan a registrarse para comprar una sola vez. |
+| **Frase** | «Sé que cumple seis años, pero ¿eso qué talla es?» |
+
+### 2.3 Análisis de la competencia
+
+Revisé las apps Android de tres cadenas que venden ropa infantil en España con el mismo recorrido en todas: entrar en la sección infantil, buscar un pijama de 4 años y llegar al carrito.
+
+| App | Qué hace bien | Qué hace mal | Qué me llevo a Estirón |
+|---|---|---|---|
+| **H&M** | Indica las tallas infantiles por altura en centímetros junto a la edad orientativa, que es más fiable que la edad sola. Filtra por talla, color y precio, y cada tarjeta tiene su corazón de favoritos. | Algunas prendas usan tallas dobles (por ejemplo, 110/116) que obligan a abrir la tabla para entenderlas, y la sección infantil es tan grande que sin filtros cuesta encontrar algo. | Edad y altura en cada opción del selector de talla, sin tallas dobles, y filtros visibles desde el principio. |
+| **Zara** | Separa la sección infantil por franjas de edad y por sexo desde el primer nivel, así que en dos toques se llega a la sección correcta. Fotografía grande y limpia, y al elegir talla avisa si quedan pocas unidades. | Estética muy minimalista, con textos pequeños y finos y poco contraste en algunos elementos, lo que complica la lectura a personas mayores. | Categorías por edad en Inicio y el estado del stock dentro del propio selector de talla, pero con textos de 14 sp o más y contraste AA. |
+| **Kiabi** | Precios muy visibles, lotes de básicos (bodies, calcetines) y recogida gratuita en tienda. | La pantalla de inicio acumula banners y promociones que compiten entre sí por la atención. | La recogida y el cambio en tienda como ventaja principal, porque Estirón tiene tiendas físicas, y un Inicio con una sola zona de novedades. |
+
+### 2.4 Insights y hallazgos clave
+
+Cada insight sale de la investigación anterior y acaba en una decisión concreta que se puede ver en el prototipo.
+
+| # | Insight | Origen | Decisión de diseño | Pantalla |
+|---|---|---|---|---|
+| I1 | La edad no basta para acertar la talla: Leo tiene 4 años pero mide 108 cm, más que la talla de 4 años (104 cm). | Encargo, Persona 1, H&M | Selector de talla propio (SelectorTalla) con edad y altura en cada opción, y botón «Guía de tallas» junto a él que abre un bottom sheet con la altura que cubre cada talla. | Detalle |
+| I2 | Se compra con una mano y con interrupciones. | Encargo, Persona 1, Hoober (2013) | Acciones principales en la mitad inferior de la pantalla (navigation bar y botón principal fijo abajo), áreas táctiles de 48 × 48 dp como mínimo y un carrito que se conserva al salir de la app. | Todas |
+| I3 | Con una mano se toca sin querer, y un diálogo de confirmación castiga a quien sí quería borrar. | Persona 1 | Eliminar del carrito al momento y ofrecer «Deshacer» en un snackbar. | Carrito |
+| I4 | Quien regala no conoce la talla y teme equivocarse. | Persona 2, Kiabi | «Cambio gratis en cualquier tienda» visible en Detalle y Confirmación; en Checkout, envío a cualquier dirección, recogida en tienda y ticket regalo. | Detalle, Checkout, Confirmación |
+| I5 | Las personas mayores abandonan ante letra pequeña, iconos sin texto y errores que no explican nada. | Persona 2, Zara | Texto de contenido de 14 sp o más (16 sp en formularios), etiquetas siempre visibles en la navigation bar, contraste AA y errores que dicen cómo corregirse, por ejemplo «Escribe el código postal completo (5 cifras)». | Todas, Checkout |
+| I6 | Hay poco tiempo y nadie quiere registrarse para una compra puntual. | Personas 1 y 2 | Categorías por edad en Inicio que llevan al catálogo ya filtrado, y compra como invitado en una sola pantalla de checkout. | Inicio, Catálogo, Checkout |
+
 Palabra del día: ______
