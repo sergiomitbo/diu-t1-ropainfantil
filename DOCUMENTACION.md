@@ -95,4 +95,71 @@ Cada insight sale de la investigación anterior y acaba en una decisión concret
 | I5 | Las personas mayores abandonan ante letra pequeña, iconos sin texto y errores que no explican nada. | Persona 2, Zara | Texto de contenido de 14 sp o más (16 sp en formularios), etiquetas siempre visibles en la navigation bar, contraste AA y errores que dicen cómo corregirse, por ejemplo «Escribe el código postal completo (5 cifras)». | Todas, Checkout |
 | I6 | Hay poco tiempo y nadie quiere registrarse para una compra puntual. | Personas 1 y 2 | Categorías por edad en Inicio que llevan al catálogo ya filtrado, y compra como invitado en una sola pantalla de checkout. | Inicio, Catálogo, Checkout |
 
+## 3. Diseño de la interfaz
+
+### 3.1 Mapa de navegación
+
+La navigation bar tiene tres destinos: Inicio, Catálogo y Favoritos. El carrito no ocupa un hueco en ella porque se visita al final de la compra y no durante; está siempre a mano en el icono de la top app bar, con un badge que indica cuántos artículos hay. Al pulsar «Añadir al carrito», la app lleva directamente al carrito, porque Laura y Antonio suelen comprar una o dos prendas y así se ahorran un paso (O1); desde allí, «Seguir comprando» devuelve al catálogo. Detalle, Carrito, Checkout y Confirmación ocultan la navigation bar para dejar sitio a un único botón principal abajo: en cada pantalla tiene que ser evidente qué hacer sin pararse a pensar (Krug, 2014).
+
+```mermaid
+flowchart TD
+    subgraph NAV["Navigation bar: 3 destinos"]
+        INI["Inicio<br/>categorías por edad, novedades y buscador"]
+        CAT["Catálogo<br/>filter chips y ordenación"]
+        FAV["Favoritos<br/>pie con la palabra del día"]
+    end
+
+    INI <-->|"navigation bar"| CAT
+    CAT <-->|"navigation bar"| FAV
+    FAV <-->|"navigation bar"| INI
+
+    INI -->|"categoría o búsqueda"| CAT
+    INI -->|"novedad"| DET
+    CAT -->|"tarjeta de producto"| DET
+    FAV -->|"producto guardado"| DET
+
+    DET["Detalle de producto<br/>carrusel y selector de talla"] -->|"Guía de tallas"| GT[["Guía de tallas<br/>bottom sheet (overlay)"]]
+    GT -->|"Entendido o tocar fuera"| DET
+    DET -->|"elegir talla y Añadir al carrito"| CAR["Carrito<br/>cantidad, eliminar con Deshacer y resumen"]
+    ICO(["Icono del carrito en la top app bar<br/>(desde cualquier pantalla)"]) -.-> CAR
+    CAR -->|"Seguir comprando"| CAT
+    CAR -->|"Tramitar pedido"| CHK["Checkout<br/>text fields con validación"]
+    CHK -->|"Pagar"| CON["Confirmación<br/>número de pedido"]
+    CON -->|"Volver al inicio"| INI
+
+    classDef overlay stroke-dasharray: 6 4
+    class GT overlay
+```
+
+De Inicio a Confirmación hay seis toques si no hay que corregir ningún dato: categoría, producto, talla, «Añadir al carrito», «Tramitar pedido» y «Pagar».
+
+### 3.2 Wireframes
+
+Siete wireframes de baja fidelidad en escala de grises, en frames de 360 × 800 dp, hechos en la página «Wireframes» de Figma (versión guardada: «Reto 2 – wireframes»). En esta fase solo decidí estructura y jerarquía: qué hay en cada pantalla, en qué orden y qué queda al alcance del pulgar.
+
+<table>
+  <tr>
+    <td align="center"><img src="capturas/wireframes/01-inicio.png" width="160" alt="Wireframe de Inicio"><br>Inicio</td>
+    <td align="center"><img src="capturas/wireframes/02-catalogo.png" width="160" alt="Wireframe de Catálogo"><br>Catálogo</td>
+    <td align="center"><img src="capturas/wireframes/03-detalle.png" width="160" alt="Wireframe de Detalle de producto"><br>Detalle</td>
+    <td align="center"><img src="capturas/wireframes/04-carrito.png" width="160" alt="Wireframe de Carrito"><br>Carrito</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="capturas/wireframes/05-checkout.png" width="160" alt="Wireframe de Checkout"><br>Checkout</td>
+    <td align="center"><img src="capturas/wireframes/06-confirmacion.png" width="160" alt="Wireframe de Confirmación"><br>Confirmación</td>
+    <td align="center"><img src="capturas/wireframes/07-favoritos.png" width="160" alt="Wireframe de Favoritos"><br>Favoritos</td>
+    <td></td>
+  </tr>
+</table>
+
+| Pantalla | Qué fija el wireframe |
+|---|---|
+| Inicio | Buscador arriba, tres tarjetas grandes de categoría por edad y un carrusel horizontal de novedades. |
+| Catálogo | Fila de filter chips (edad y talla, color, precio) y botón de ordenar sobre una cuadrícula de dos columnas. |
+| Detalle | Carrusel de fotos, precio, selector de talla en dos filas con «Guía de tallas» al lado y botón «Añadir al carrito» fijo abajo. |
+| Carrito | Lista con selector de cantidad y botón de eliminar, resumen del importe y botón «Tramitar pedido» fijo abajo. |
+| Checkout | Tipo de entrega, formulario corto, ticket regalo, método de pago y botón «Pagar». |
+| Confirmación | Mensaje de éxito, número de pedido, recordatorio del cambio en tienda y botón «Volver al inicio». |
+| Favoritos | Cuadrícula de productos guardados y pie con la palabra del día. |
+
 Palabra del día: ______
