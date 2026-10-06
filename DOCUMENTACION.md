@@ -292,4 +292,16 @@ Cada problema se clasifica por severidad, de 0 (no es un problema) a 4 (impide c
 
 Las tres tareas se completan en el prototipo sin callejones sin salida, y la compra de T1 cabe en seis toques, en línea con O1. El problema más grave es H1, porque afecta directamente a O2.
 
+### 4.3 Iteraciones y mejoras
+
+| Hallazgo | Cambio aplicado | Por qué |
+|---|---|---|
+| H1 | La etiqueta «Talla» pasa a «Talla por altura» y cada opción muestra la altura como máximo («≤104 cm»). | Deja claro que se elige por la altura del niño y que cada talla cubre hasta esa altura, sin obligar a abrir la guía. |
+
+La versión de Figma con este cambio es «Reto 5 – iteración». H2 y H3 quedan para la siguiente iteración (apartado 5.2).
+
+| Antes | Después |
+|---|---|
+| <img src="capturas/iteracion/antes.png" width="220" alt="Detalle antes de la mejora"> | <img src="capturas/iteracion/despues.png" width="220" alt="Detalle después de la mejora"> |
+
 Palabra del día: Estirón
