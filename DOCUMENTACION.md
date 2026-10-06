@@ -268,4 +268,4 @@ Prototipo navegable: [abrir en Figma](https://www.figma.com/proto/kA36uNU9arEZQT
 | Modo oscuro | Inicio y Detalle duplicados con el esquema oscuro. |
 | Palabra del día | En el pie de Favoritos y al final de este documento. |
 
-Palabra del día: ______
+Palabra del día: Estirón
