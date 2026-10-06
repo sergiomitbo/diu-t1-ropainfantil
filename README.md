@@ -14,8 +14,8 @@ Estirón es la primera app Android de una cadena de tiendas de ropa y calzado in
 
 | Recurso | Enlace |
 |---|---|
-| Archivo de Figma (la docente tiene permiso de edición) | [Abrir el archivo](https://www.figma.com/design/PENDIENTE) |
-| Prototipo navegable (empieza en Inicio) | [Abrir el prototipo](https://www.figma.com/proto/PENDIENTE) |
+| Archivo de Figma (la docente tiene permiso de edición) | [Abrir el archivo](https://www.figma.com/design/kA36uNU9arEZQTECRfAs6X/T1-%C2%B7-Estir%C3%B3n-%C2%B7-Sergio-Mitchell-Bocero) |
+| Prototipo navegable (empieza en Inicio) | [Abrir el prototipo](https://www.figma.com/proto/kA36uNU9arEZQTECRfAs6X/T1-%C2%B7-Estir%C3%B3n-%C2%B7-Sergio-Mitchell-Bocero?node-id=60812-38379&starting-point-node-id=60812%3A38379) |
 | Documentación completa | [DOCUMENTACION.md](DOCUMENTACION.md) |
 | Tokens de la guía de estilo | [diseno/estilos.json](diseno/estilos.json) |
 

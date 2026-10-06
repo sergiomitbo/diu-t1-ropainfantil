@@ -222,4 +222,50 @@ Se sigue la escala de forma de Material 3: tarjetas con esquinas de 12 dp, chips
 
 Componentes del kit Material 3: top app bar, navigation bar, search bar, card, filter chip, button (filled y text), icon button, text field (outlined), segmented button, checkbox, radio button, snackbar y bottom sheet. Componentes propios, con auto layout y variantes: **TarjetaProducto** (normal, favorito, agotado) y **SelectorTalla** (disponible, seleccionada, sin stock).
 
+### 3.4 Prototipo de alta fidelidad
+
+Prototipo navegable: [abrir en Figma](https://www.figma.com/proto/kA36uNU9arEZQTECRfAs6X/T1-%C2%B7-Estir%C3%B3n-%C2%B7-Sergio-Mitchell-Bocero?node-id=60812-38379&starting-point-node-id=60812%3A38379). Versión guardada: «Reto 4 – alta fidelidad».
+
+<table>
+  <tr>
+    <td align="center"><img src="capturas/prototipo/01-inicio.png" width="160" alt="Inicio"><br>Inicio</td>
+    <td align="center"><img src="capturas/prototipo/02-catalogo.png" width="160" alt="Catálogo"><br>Catálogo</td>
+    <td align="center"><img src="capturas/prototipo/03-detalle.png" width="160" alt="Detalle de producto"><br>Detalle</td>
+    <td align="center"><img src="capturas/prototipo/04-carrito.png" width="160" alt="Carrito"><br>Carrito</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="capturas/prototipo/05-checkout.png" width="160" alt="Checkout con un campo en estado de error"><br>Checkout (error)</td>
+    <td align="center"><img src="capturas/prototipo/06-confirmacion.png" width="160" alt="Confirmación del pedido"><br>Confirmación</td>
+    <td align="center"><img src="capturas/prototipo/07-favoritos.png" width="160" alt="Favoritos con la palabra del día en el pie"><br>Favoritos</td>
+    <td align="center"><img src="capturas/prototipo/03-detalle-guia-tallas.png" width="160" alt="Guía de tallas abierta como bottom sheet"><br>Guía de tallas</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="capturas/prototipo/04b-carrito-deshacer.png" width="160" alt="Carrito con el snackbar Deshacer"><br>Snackbar «Deshacer»</td>
+    <td align="center"><img src="capturas/prototipo/01-inicio-oscuro.png" width="160" alt="Inicio en modo oscuro"><br>Inicio (oscuro)</td>
+    <td align="center"><img src="capturas/prototipo/03-detalle-oscuro.png" width="160" alt="Detalle en modo oscuro"><br>Detalle (oscuro)</td>
+    <td></td>
+  </tr>
+</table>
+
+| Pantalla | Componentes | Qué resuelve |
+|---|---|---|
+| Inicio | Top app bar, search bar, tres tarjetas de categoría (Bebé 0-24 m, Niña y Niño), carrusel de TarjetaProducto y navigation bar. | Llegar en un toque a la sección de edad correcta (I6). |
+| Catálogo | Top app bar, filter chips (edad y talla, color, precio), botón de ordenar, cuadrícula de TarjetaProducto y navigation bar. | Reducir un catálogo grande a lo que le sirve a ese niño. |
+| Detalle | Top app bar, carrusel de fotos, SelectorTalla, text button «Guía de tallas», bottom sheet y filled button «Añadir al carrito». | Elegir la talla con seguridad (I1, I4). |
+| Carrito | Top app bar, lista con selector de cantidad e icon button de eliminar, snackbar, resumen del importe y filled button «Tramitar pedido». | Revisar y corregir sin miedo (I3). |
+| Checkout | Top app bar, segmented button (a domicilio o recoger en tienda), text fields, checkbox de ticket regalo, radio buttons de pago y filled button «Pagar». | Pagar sin registrarse y con errores que se entienden (I4, I5, I6). |
+| Confirmación | Icono de éxito, número de pedido, recordatorio del cambio en tienda y filled button «Volver al inicio». | Cerrar la compra con tranquilidad. |
+| Favoritos | Top app bar, cuadrícula de TarjetaProducto (favorito y agotado), pie con la palabra del día y navigation bar. | Guardar ideas para decidir después. |
+
+| Requisito | Cómo está resuelto |
+|---|---|
+| Flujo de compra | Inicio → Catálogo → Detalle → elegir talla → Carrito → Checkout → Confirmación → Inicio. El flujo empieza en Inicio. |
+| Navigation bar | Inicio, Catálogo y Favoritos están enlazados entre sí desde las tres pantallas. |
+| Overlay | «Guía de tallas» abre un bottom sheet como overlay anclado abajo, con el fondo oscurecido y cierre al tocar fuera o en «Entendido». |
+| Smart Animate | Al tocar una talla, el SelectorTalla pasa de «disponible» a «seleccionada» (componente interactivo). También anima la eliminación en el carrito y la corrección del código postal. |
+| Estado de error | El campo «Código postal» aparece en error con el texto de ayuda «Escribe el código postal completo (5 cifras)»; al tocarlo, se muestra corregido y ya se puede pagar. |
+| Snackbar | Al eliminar un producto del carrito aparece «Producto eliminado» con la acción «Deshacer», que lo recupera. |
+| Modo oscuro | Inicio y Detalle duplicados con el esquema oscuro. |
+| Palabra del día | En el pie de Favoritos y al final de este documento. |
+
 Palabra del día: ______
