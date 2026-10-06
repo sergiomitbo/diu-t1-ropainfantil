@@ -162,4 +162,64 @@ Siete wireframes de baja fidelidad en escala de grises, en frames de 360 × 800 
 | Confirmación | Mensaje de éxito, número de pedido, recordatorio del cambio en tienda y botón «Volver al inicio». |
 | Favoritos | Cuadrícula de productos guardados y pie con la palabra del día. |
 
+### 3.3 Guía de estilo Material Design 3
+
+Los valores exactos están en [diseno/estilos.json](diseno/estilos.json); este apartado explica por qué son esos.
+
+#### Color
+
+Color semilla: **#2A9D8F**, un verde azulado. Lo elegí por tres motivos. No asocia la marca a niña o a niño, así que las dos secciones conviven sin recurrir al rosa y al azul. Está lejos del rojo que Material reserva para los errores, de modo que un botón principal nunca se confunde con un aviso en el carrito o en el checkout. Y transmite calma, algo útil justo cuando hay que pagar. A partir de la semilla, Material Theme Builder genera los esquemas claro y oscuro, que están aplicados a los componentes del kit en Figma.
+
+#### Contraste
+
+Ratios calculados con la fórmula de luminancia relativa de WCAG 2.2 (World Wide Web Consortium [W3C], 2023) y truncados a dos decimales, de modo que nunca se redondean hacia arriba. El mínimo exigido es 4,5:1, el nivel AA para texto normal.
+
+| Pareja | Claro | Ratio | Oscuro | Ratio | ¿≥ 4,5:1? |
+|---|---|---|---|---|---|
+| primary / onPrimary | `#006A60` / `#FFFFFF` | 6,50:1 | `#82D5C8` / `#003731` | 7,73:1 | Sí |
+| primaryContainer / onPrimaryContainer | `#9EF2E4` / `#005048` | 7,26:1 | `#005048` / `#9EF2E4` | 7,26:1 | Sí |
+| secondary / onSecondary | `#4A635F` / `#FFFFFF` | 6,47:1 | `#B1CCC6` / `#1C3531` | 7,68:1 | Sí |
+| tertiary / onTertiary | `#456179` / `#FFFFFF` | 6,48:1 | `#ADCAE6` / `#153349` | 7,72:1 | Sí |
+| surface / onSurface | `#F4FBF8` / `#161D1B` | 16,31:1 | `#0E1513` / `#DDE4E1` | 14,32:1 | Sí |
+| error / onError | `#BA1A1A` / `#FFFFFF` | 6,46:1 | `#FFB4AB` / `#690005` | 7,71:1 | Sí |
+
+Además de las doce claves del JSON, el prototipo usa estas parejas, que también cumplen:
+
+| Pareja | Dónde se usa | Ratio claro | Ratio oscuro | Mínimo | ¿Cumple? |
+|---|---|---|---|---|---|
+| secondaryContainer / onSecondaryContainer | Indicador activo de la navigation bar y filter chips seleccionados | 7,24:1 | 7,24:1 | 4,5:1 | Sí |
+| surfaceContainer / onSurfaceVariant | Iconos y etiquetas inactivos de la navigation bar | 7,99:1 | 9,64:1 | 4,5:1 | Sí |
+| surface / onSurfaceVariant | Texto de ayuda de los campos y textos secundarios | 8,86:1 | 10,88:1 | 4,5:1 | Sí |
+| inverseSurface / inverseOnSurface | Texto del snackbar | 11,55:1 | 10,15:1 | 4,5:1 | Sí |
+| inverseSurface / inversePrimary | Acción «Deshacer» del snackbar | 7,68:1 | 5,03:1 | 4,5:1 | Sí |
+| surface / outline | Borde del SelectorTalla y de los text fields (componente: mínimo 3:1) | 4,27:1 | 5,84:1 | 3:1 | Sí |
+
+La variante «sin stock» del SelectorTalla usa texto atenuado al 38 %, como cualquier estado deshabilitado de Material. WCAG no exige contraste mínimo a los componentes inactivos, pero la talla agotada aparece además tachada para que el estado no dependa solo del color.
+
+#### Tipografía
+
+Roboto con la escala tipográfica de Material 3 (Google, s. f.), que es además la familia del propio Android. Los tamaños van en sp para que respeten el tamaño de letra que cada persona configura en su móvil, algo importante para usuarios como Antonio. El texto de contenido nunca baja de 14 sp; solo las etiquetas de la navigation bar usan 12 sp, como indica Material.
+
+| Rol | Tamaño / interlineado (sp) | Peso | Uso en Estirón |
+|---|---|---|---|
+| headlineSmall | 24 / 32 | 400 | Título de Confirmación («¡Pedido realizado!»). |
+| titleLarge | 22 / 28 | 400 | Títulos de la top app bar y precio en Detalle. |
+| titleMedium | 16 / 24 | 500 | Nombre del producto en Detalle, títulos de sección y precio en las tarjetas. |
+| bodyLarge | 16 / 24 | 400 | Texto principal y texto que se escribe en los campos del formulario. |
+| bodyMedium | 14 / 20 | 400 | Nombre del producto en las tarjetas, altura en el SelectorTalla y textos de apoyo. |
+| labelLarge | 14 / 20 | 500 | Botones, chips y talla en el SelectorTalla. |
+| labelMedium | 12 / 16 | 500 | Etiquetas de la navigation bar. |
+
+#### Rejilla, espaciado y áreas táctiles
+
+Las pantallas miden 360 × 800 dp, la clase de ventana compacta de Android. La rejilla tiene 4 columnas con márgenes de 16 dp y medianiles de 16 dp, lo que deja columnas de 70 dp: cada tarjeta del catálogo ocupa dos columnas (156 dp). Todos los espaciados son múltiplos de 8 dp (8, 16, 24 y 32).
+
+Ningún elemento interactivo tiene menos de 48 × 48 dp de área táctil. Los icon buttons miden 48 × 48 dp, los chips se colocan en una fila de 48 dp de alto, cada opción del SelectorTalla mide 76 × 56 dp (caben cuatro por fila con 8 dp entre ellas) y los botones principales ocupan todo el ancho útil, 328 dp. La top app bar mide 64 dp y la navigation bar 80 dp.
+
+#### Forma, iconos y componentes
+
+Se sigue la escala de forma de Material 3: tarjetas con esquinas de 12 dp, chips y SelectorTalla de 8 dp, botones completamente redondeados y bottom sheet con 28 dp en las esquinas superiores. Los iconos son los Material Symbols del kit, y en la navigation bar siempre van con su etiqueta de texto.
+
+Componentes del kit Material 3: top app bar, navigation bar, search bar, card, filter chip, button (filled y text), icon button, text field (outlined), segmented button, checkbox, radio button, snackbar y bottom sheet. Componentes propios, con auto layout y variantes: **TarjetaProducto** (normal, favorito, agotado) y **SelectorTalla** (disponible, seleccionada, sin stock).
+
 Palabra del día: ______

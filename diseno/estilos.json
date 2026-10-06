@@ -1,0 +1,31 @@
+{
+  "propietario": "sergiomitbo",
+  "tienda": "Estirón",
+  "colorSemilla": "#2A9D8F",
+  "esquema": {
+    "claro":  { "primary": "#006A60", "onPrimary": "#FFFFFF", "primaryContainer": "#9EF2E4", "onPrimaryContainer": "#005048",
+                "secondary": "#4A635F", "onSecondary": "#FFFFFF", "tertiary": "#456179", "onTertiary": "#FFFFFF",
+                "surface": "#F4FBF8", "onSurface": "#161D1B", "error": "#BA1A1A", "onError": "#FFFFFF" },
+    "oscuro": { "primary": "#82D5C8", "onPrimary": "#003731", "primaryContainer": "#005048", "onPrimaryContainer": "#9EF2E4",
+                "secondary": "#B1CCC6", "onSecondary": "#1C3531", "tertiary": "#ADCAE6", "onTertiary": "#153349",
+                "surface": "#0E1513", "onSurface": "#DDE4E1", "error": "#FFB4AB", "onError": "#690005" }
+  },
+  "tipografia": {
+    "familia": "Roboto",
+    "roles": {
+      "headlineSmall": { "tamano": 24, "interlineado": 32, "peso": 400 },
+      "titleLarge":    { "tamano": 22, "interlineado": 28, "peso": 400 },
+      "titleMedium":   { "tamano": 16, "interlineado": 24, "peso": 500 },
+      "bodyLarge":     { "tamano": 16, "interlineado": 24, "peso": 400 },
+      "bodyMedium":    { "tamano": 14, "interlineado": 20, "peso": 400 },
+      "labelLarge":    { "tamano": 14, "interlineado": 20, "peso": 500 },
+      "labelMedium":   { "tamano": 12, "interlineado": 16, "peso": 500 }
+    }
+  },
+  "espaciado": { "base": 8, "margenPantalla": 16, "columnas": 4, "areaTactilMinima": 48 },
+  "componentes": ["Top app bar", "Navigation bar", "Card", "Filter chip", "Button", "Text field", "Snackbar", "Bottom sheet", "Search bar", "Icon button", "Segmented button", "Checkbox", "Radio button"],
+  "componentesPropios": [
+    { "nombre": "TarjetaProducto", "variantes": ["normal", "favorito", "agotado"] },
+    { "nombre": "SelectorTalla",   "variantes": ["disponible", "seleccionada", "sin stock"] }
+  ]
+}
