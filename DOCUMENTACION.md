@@ -9,7 +9,7 @@ Autor: Sergio Mitchell Bocero ([@sergiomitbo](https://github.com/sergiomitbo)), 
 
 En Estirón casi nunca compra quien va a llevar la ropa. Compra una madre con el bebé en brazos, un padre a la salida del colegio o un abuelo que solo sabe la edad de su nieta. Los tres tienen poco tiempo, usan el móvil con una mano y dudan con las tallas. Si la app se diseña a partir del catálogo y no de estas personas, el resultado es previsible: compras que se quedan a medias y devoluciones porque la talla no era la buena. Y si alguien elige mal la talla, el fallo no es suyo: la mayoría de los errores de uso son errores de diseño (Norman, 2013).
 
-Por eso el proyecto sigue el ciclo de diseño centrado en el usuario de la norma ISO 9241-210 (International Organization for Standardization [ISO], 2019): entender quién compra y en qué situación (sección 2), diseñar a partir de lo aprendido (sección 3), probar el diseño con personas (sección 4) y corregirlo con lo que salga de las pruebas (apartado 4.3). La regla que aplico es que cada decisión de la interfaz tiene que poder justificarse con un objetivo o con un insight de este documento. Si no se puede, sobra.
+Por eso el proyecto sigue el ciclo de diseño centrado en el usuario de la norma ISO 9241-210 (International Organization for Standardization [ISO], 2019): entender quién compra y en qué situación (sección 2), diseñar a partir de lo aprendido (sección 3), validar el diseño (sección 4) y corregirlo con lo que salga de las pruebas (apartado 4.3). La regla que aplico es que cada decisión de la interfaz tiene que poder justificarse con un objetivo o con un insight de este documento. Si no se puede, sobra.
 
 ### 1.2 Objetivos y metas del proyecto
 
@@ -303,5 +303,45 @@ La versión de Figma con este cambio es «Reto 5 – iteración». H2 y H3 queda
 | Antes | Después |
 |---|---|
 | <img src="capturas/iteracion/antes.png" width="220" alt="Detalle antes de la mejora"> | <img src="capturas/iteracion/despues.png" width="220" alt="Detalle después de la mejora"> |
+
+## 5. Entrega y documentación final
+
+### 5.1 Justificación del diseño propuesto
+
+El diseño responde a los tres rasgos que definen a quien compra en Estirón. Para el poco tiempo, la compra cabe en seis pantallas y seis toques, las categorías por edad llevan directamente al catálogo filtrado y el checkout no exige registro (O1, I6). Para la duda con las tallas, cada talla muestra edad y altura, la guía está a un toque en un bottom sheet que no saca al usuario del producto y el cambio gratis en tienda sirve de red de seguridad (O2, I1, I4). Para el uso con una mano, las acciones principales están en la mitad inferior, todas las áreas táctiles miden al menos 48 dp y un error se deshace con un toque (O3, O4, I2, I3).
+
+Material Design 3 aporta algo más que estética: son patrones que cualquier usuario de Android ya conoce, como la navigation bar, los chips o el snackbar; sus roles de color están pensados para cumplir el contraste mínimo (comprobado en el apartado 3.3); y el diseño se traslada directamente a código con los componentes de Material 3 para Jetpack Compose.
+
+La evaluación heurística confirmó que las tres tareas se completan sin bloqueos y que la compra cabe en seis toques. Detectó un riesgo en la elección de talla (H1), ya corregido en la iteración, y dos problemas menores en el checkout que quedan para la siguiente versión. Los objetivos O1, O2 y O3 tienen que medirse todavía con usuarios reales.
+
+### 5.2 Recomendaciones y pasos a seguir
+
+| Recomendación | Motivo |
+|---|---|
+| Probar el prototipo con cinco personas del público real, al menos dos de ellas mayores de 60 años, midiendo éxito, tiempo y errores en T1, T2 y T3. | La evaluación heurística no sustituye a observar a usuarios, y cinco personas bastan para encontrar la mayoría de los problemas (Nielsen, 2000). |
+| Corregir H2 y H3: mostrar el error también junto a «Pagar» y quitar el carrito de la barra de Checkout. | Son los dos problemas pendientes de la evaluación. |
+| Crear un perfil «Mis peques» con la edad y la altura de cada niño. | Preseleccionar la talla y filtrar el catálogo automáticamente (I1, I6). |
+| Mostrar el stock por tienda y permitir reservar para recoger. | Sacar más partido a la red de tiendas (I4). |
+| Añadir aviso de reposición en las tallas agotadas. | Ahora la variante «sin stock» es un callejón sin salida. |
+| Revisar la accesibilidad en la app real: TalkBack, letra al 200 % y modo oscuro en todas las pantallas. | El prototipo no permite comprobarlo. |
+| Diseñar las versiones para pantallas medianas y grandes (tabletas y plegables) con navigation rail. | El prototipo solo cubre la clase compacta. |
+
+## 6. Referencias bibliográficas
+
+Google. (s. f.). *Material Design 3*. https://m3.material.io/
+
+Hoober, S. (2013, 18 de febrero). *How do users really hold mobile devices?* UXmatters. https://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php
+
+International Organization for Standardization. (2019). *Ergonomics of human-system interaction — Part 210: Human-centred design for interactive systems* (ISO 9241-210:2019).
+
+Krug, S. (2014). *Don't make me think, revisited: A common sense approach to web usability* (3.ª ed.). New Riders.
+
+Nielsen, J. (2000, 18 de marzo). *Why you only need to test with 5 users*. Nielsen Norman Group. https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/
+
+Nielsen, J., y Molich, R. (1990). Heuristic evaluation of user interfaces. En *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* (pp. 249–256). ACM. https://doi.org/10.1145/97243.97281
+
+Norman, D. A. (2013). *The design of everyday things* (Ed. rev. y ampl.). Basic Books.
+
+World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 Palabra del día: Estirón
