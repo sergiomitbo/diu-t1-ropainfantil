@@ -268,4 +268,28 @@ Prototipo navegable: [abrir en Figma](https://www.figma.com/proto/kA36uNU9arEZQT
 | Modo oscuro | Inicio y Detalle duplicados con el esquema oscuro. |
 | Palabra del día | En el pie de Favoritos y al final de este documento. |
 
+## 4. Validación y pruebas
+
+### 4.1 Metodología
+
+En esta entrega la validación se hizo con una evaluación heurística del prototipo navegable, en lugar de pruebas con usuarios. Es un método de inspección en el que se revisa la interfaz contra principios de usabilidad reconocidos (Nielsen y Molich, 1990). Aquí se aplicaron las diez heurísticas de Nielsen pantalla a pantalla y se recorrieron en el prototipo las tres tareas que servirán para las pruebas con usuarios.
+
+| Tarea | Escenario | Empieza en | Recorrido en el prototipo | Objetivo |
+|---|---|---|---|---|
+| T1 | «Tu hijo tiene 4 años y necesita un pijama. Cómpraselo y termina el pedido.» | Inicio | 6 toques si no hay que corregir datos: Niño, pijama, 4 años, «Añadir al carrito», «Tramitar pedido» y «Pagar». | O1 |
+| T2 | «Tu nieta cumple 6 años y mide 120 cm. Elige la talla de este pijama.» | Detalle | 2 toques para abrir y cerrar la guía de tallas y 1 para elegir 7 años (hasta 122 cm). | O2 |
+| T3 | «Tienes en el carrito unas zapatillas que no querías. Quítalas. Ahora recupéralas.» | Carrito | 2 toques: la papelera y «Deshacer» en el snackbar. | O3 |
+
+Cada problema se clasifica por severidad, de 0 (no es un problema) a 4 (impide completar la tarea).
+
+### 4.2 Resultados
+
+| # | Heurística | Hallazgo | Pantalla | Severidad |
+|---|---|---|---|---|
+| H1 | Coincidencia entre el sistema y el mundo real | En el selector, «104 cm» puede leerse como la altura exacta del niño y no como la máxima de esa talla. En T2, con 120 cm, se puede acabar eligiendo 6 años (116 cm) si no se abre la guía. | Detalle | 3 |
+| H2 | Prevención de errores | Con el código postal en error, «Pagar» no responde ni dice por qué; el aviso solo aparece junto al campo, que puede quedar fuera de la vista. | Checkout | 2 |
+| H3 | Consistencia y estándares | El icono del carrito aparece en la barra superior de Checkout pero ahí no hace nada, cuando en el resto de pantallas abre el carrito. | Checkout | 1 |
+
+Las tres tareas se completan en el prototipo sin callejones sin salida, y la compra de T1 cabe en seis toques, en línea con O1. El problema más grave es H1, porque afecta directamente a O2.
+
 Palabra del día: Estirón
